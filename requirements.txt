@@ -1,0 +1,38 @@
+# ---------- UI ----------
+streamlit>=1.37.0
+
+# ---------- Audio ingestion ----------
+yt-dlp>=2024.8.6          # download audio from YouTube URLs
+pydub>=0.25.1              # audio format handling / conversion
+ffmpeg-python>=0.2.0       # wrapper, requires ffmpeg installed on system
+
+# ---------- Transcription (local Whisper) ----------
+openai-whisper>=20231117
+torch>=2.3.0                # required by whisper; use CUDA build if GPU available
+torchaudio>=2.3.0
+
+# ---------- Translation (Hindi -> English) ----------
+deep-translator>=1.11.4       # lightweight option; swap for deep-translator if unstable
+# deep-translator>=1.11.4   # alternative translation library (uncomment if used)
+
+# ---------- LLM orchestration (LangChain + Mistral) ----------
+langchain>=0.2.14
+langchain-core>=0.2.38
+langchain-community>=0.2.12
+langchain-mistralai>=0.1.13
+
+# ---------- RAG pipeline ----------
+chromadb>=0.5.5
+langchain-huggingface>=0.0.3
+sentence-transformers>=3.0.1
+huggingface-hub>=0.24.6
+
+# ---------- Export (PDF / TXT) ----------
+fpdf2>=2.7.9                 # PDF generation
+reportlab>=4.2.2             # alternative/advanced PDF generation (optional, keep if used)
+
+# ---------- Utilities ----------
+python-dotenv>=1.0.1          # load API keys from .env
+tqdm>=4.66.5
+numpy>=1.26.4
+pandas>=2.2.2

@@ -1,0 +1,12 @@
+# Virtual environment
+.myenv/
+
+# Environment variables
+.env
+
+# Downloaded audio files
+utils/downloads/
+
+# Python cache
+__pycache__/
+*.pyc
