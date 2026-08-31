@@ -4,3 +4,5 @@ __pycache__/
 *.pyc.myenv/
 .env
 .myenv/
+.DS_Store
+utils/downloads/
