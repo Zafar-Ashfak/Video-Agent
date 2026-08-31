@@ -1,12 +1,5 @@
-# Virtual environment
-.myenv/
-
-# Environment variables
-.env
-
-# Downloaded audio files
-utils/downloads/
-
-# Python cache
+# Created by venv; see https://docs.python.org/3/library/venv.html
+.venv/
+.idea/
 __pycache__/
 *.pyc

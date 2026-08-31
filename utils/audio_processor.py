@@ -1,6 +1,8 @@
 import yt_dlp
 import os
 
+from pydub import AudioSegment
+
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
@@ -32,4 +34,16 @@ def download_youtube_audio(url: str) -> str:
 
 url = "https://www.youtube.com/watch?v=0fB0gr_M7Pw"
 
+
 print(download_youtube_audio(url))
+data = download_youtube_audio(url)
+
+def convert_to_wav(input_path : str) -> str:
+    """ Convert any audio/video file to wav format using pydub. """
+    output_path = os.path.splitext(input_path)[0] + "_converted.wav"
+    audio = AudioSegment.from_file(input_path)
+    audio = audio.set_channels(1).set_frame_rate(16000) # 16khz
+    audio.export(output_path, format="wav")
+    return output_path
+
+print(convert_to_wav(data))
