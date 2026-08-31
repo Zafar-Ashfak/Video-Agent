@@ -5,9 +5,6 @@ from pydub import AudioSegment
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-# YouTube video URL
-url = "https://youtu.be/Ty8gcCKuwNI"
-
 def download_youtube_audio(url: str) -> str:
     output_path = os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s")
 
@@ -33,10 +30,6 @@ def download_youtube_audio(url: str) -> str:
 
     return filename
 
-
-print(download_youtube_audio(url))
-data = download_youtube_audio(url)
-
 def convert_to_wav(input_path : str) -> str:
     """ Convert any audio/video file to wav format using pydub. """
     output_path = os.path.splitext(input_path)[0] + "_converted.wav"
@@ -44,8 +37,6 @@ def convert_to_wav(input_path : str) -> str:
     audio = audio.set_channels(1).set_frame_rate(16000) # 16khz
     audio.export(output_path, format="wav")
     return output_path
-
-data_final = convert_to_wav(data)
 
 def chunk_audio(wav_path : str, chunk_minutes : int = 10) -> list:
     audio = AudioSegment.from_wav(wav_path)
@@ -61,4 +52,24 @@ def chunk_audio(wav_path : str, chunk_minutes : int = 10) -> list:
 
     return chunks
 
-print(chunk_audio(data_final, 8))
+def process_input(source: str) -> list:
+    if source.startswith(("http://", "https://")):
+        print("Detected YouTube URL\nDownloading audio...")
+        audio_path = download_youtube_audio(source)
+    else:
+        print("Detected local file...")
+        audio_path = source
+
+    print("Converting audio to 16kHz mono WAV...")
+    wav_path = convert_to_wav(audio_path)
+
+    print("Chunking audio...")
+    chunks = chunk_audio(wav_path)
+
+    print(f"Audio ready - {len(chunks)} chunk(s) created.")
+    return chunks
+
+
+url = "https://youtu.be/VJ9VC9OqdAA"
+
+process_input(url)
