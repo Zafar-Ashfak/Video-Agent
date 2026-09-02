@@ -30,7 +30,6 @@ import os
 
 
 def transcribe_chunk_sarvam(chunk_path: str) -> str:
-
     if not SARVAM_API_KEY:
         raise RuntimeError("SARVAM_API_KEY is not set")
 
@@ -52,7 +51,6 @@ def transcribe_chunk_sarvam(chunk_path: str) -> str:
 
         try:
             with open(temp_path, "rb") as f:
-
                 files = {
                     "file": (
                         os.path.basename(temp_path),
