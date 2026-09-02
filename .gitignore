@@ -5,6 +5,4 @@ __pycache__/
 .env
 .myenv/
 .DS_Store
-utils/downloads/
-.DS_Store
-utils/downloads/
+downloads/

@@ -1,7 +1,9 @@
+from tabnanny import verbose
+
 import whisper
 import os
 
-WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
+WHISPER_MODEL = os.getenv("WHISPER_MODEL", "tiny")
 
 _model = None
 
@@ -18,18 +20,22 @@ def transcribe_chunk(chunk_path : str, translate : bool = False) -> str:
 
     task = "translate" if translate else "transcribe"
 
-    result = model.transcribe(chunk_path, task=task)
+    result = model.transcribe(
+        chunk_path,
+        task=task
+    )
 
-    return result["text"]
+    return result["text"].strip()
 
-def transcribe_all(chunks : list, translate : bool = False, full_transcript=None):
+def transcribe_all(chunks: list, translate: bool = False):
     full_transcript = ""
 
     for i, chunk in enumerate(chunks):
-        print(f"Transcribing chunk {i + 1} ")
+        print(f"Transcribing chunk {i + 1}...")
+
         text = transcribe_chunk(chunk, translate=translate)
+
         full_transcript += text + " "
 
-    print("Transcription completed successfully")
     return full_transcript
 
