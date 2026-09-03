@@ -39,7 +39,7 @@ def extract_action_items(transcript : str) -> str:
 
     return chain.invoke(transcript)
 
-def extract_action_decisions(transcript : str) -> str:
+def extract_key_decisions(transcript : str) -> str:
     chain = build_chain(
         "You are an expert meeting analyst. From the meeting transcript, "
         "extract all key decisions made. Format as a numbered list. "
@@ -48,7 +48,7 @@ def extract_action_decisions(transcript : str) -> str:
 
     return chain.invoke(transcript)
 
-def extract_action_items(transcript : str) -> str:
+def extract_questions(transcript : str) -> str:
     chain = build_chain(
         "From the meeting transcript, extract all unresolved questions "
         "or topics needing follow-up. Format as a numbered list. "
