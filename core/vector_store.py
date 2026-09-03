@@ -1,6 +1,3 @@
-import os
-from importlib import metadata
-
 from langchain_chroma import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
