@@ -1,6 +1,7 @@
 import whisper
 import os
 import requests
+from pydub import AudioSegment
 
 WHISPER_MODEL = os.getenv("WHISPER_MODEL", "tiny")
 SARVAM_API_KEY = os.getenv("SARVAM_API_KEY")
@@ -22,12 +23,6 @@ def transcribe_chunk_whisper(chunk_path : str) -> str:
 
     result = model.transcribe(chunk_path, task="transcribe")
     return result["text"].strip()
-
-import requests
-from pydub import AudioSegment
-import tempfile
-import os
-
 
 def transcribe_chunk_sarvam(chunk_path: str) -> str:
     if not SARVAM_API_KEY:

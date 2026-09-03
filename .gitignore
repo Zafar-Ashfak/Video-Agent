@@ -3,6 +3,6 @@
 __pycache__/
 *.pyc.myenv/
 .env
-.myenv/
+.venv/
 .DS_Store
 downloads/
