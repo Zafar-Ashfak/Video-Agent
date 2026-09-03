@@ -13,13 +13,18 @@ def get_llm():
 
 def build_chain(system_prompt : str):
     llm = get_llm()
+
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", system_prompt),
+        ("human", "{text}")
+    ])
+
     return (
-            (RunnablePassthrough()
+            RunnablePassthrough()
             | RunnableLambda(lambda x: {"text": x})
-            | ChatPromptTemplate.from_messages(
-                ("system", system_prompt),
-                ("human", "{text}")
-            )) | llm | StrOutputParser()
+            | prompt
+            | llm
+            | StrOutputParser()
     )
 
 def extract_action_items(transcript : str) -> str:
