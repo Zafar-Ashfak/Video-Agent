@@ -49,3 +49,34 @@ def build_rag_chain(transcript: str):
 
     return rag_chain
 
+def load_rag_chain():
+    vector_store = load_vector_store()
+    retriever = get_retriever()
+    llm = get_llm()
+    prompt = ChatPromptTemplate.from_messages(
+        [(
+            "system",
+            """ You are an expert meeting assistant. Answer the user's question
+            based on ONLY on the meeting transcript context provided below.
+            If the answer does not found in the context, say:
+            'I could not find this information in the meeting transcript.'
+            Always be concise and precise. If quoting someone, meeting it clearly.
+
+            Context from meeting transcript:
+            {context} """
+        ),
+            ("human", "{question}")
+        ]
+    )
+
+    rag_chain = (
+            {"context": retriever | RunnableLambda(format_docs),
+             "question": RunnablePassthrough()
+             }
+
+            | prompt
+            | llm
+            | StrOutputParser()
+    )
+
+    return rag_chain
