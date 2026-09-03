@@ -18,7 +18,7 @@ def run_pipeline(src : str, lang : str = "english") -> dict:
 
     summary = summarize(transcript)
 
-    action_item = extract_action_items(transcript)
+    action_items = extract_action_items(transcript)
 
     decisions = extract_key_decisions(transcript)
 
@@ -30,7 +30,7 @@ def run_pipeline(src : str, lang : str = "english") -> dict:
         "title": title,
         "transcript": transcript,
         "summary": summary,
-        "action_item": action_item,
+        "action_items": action_items,
         "key_decisions": decisions,
         "open_questions": questions,
         "rag_chain": rag_chain,
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print(f"📌 Title: {result['title']}")
     print(f"\n📋 Summary:\n{result['summary']}")
-    print(f"\n✅ Action Items:\n'{result['action_items']}")
+    print(f"\n✅ Action Items:\n{result['action_items']}")
     print(f"\n🔑 Key Decisions:\n{result['key_decisions']}")
     print(f"\n❓ Open Questions:\n{result['open_questions']}")
     print("=" * 60)
@@ -61,6 +61,9 @@ if __name__ == "__main__":
         if not question:
             continue
         answer = ask_question(rag_chain, question)
-        print(f"\n🤖 Assistant: {answer}\n")
+        print("\n🤖 Assistant:")
+        print("-" * 60)
+        print(answer)
+        print()
 
 
