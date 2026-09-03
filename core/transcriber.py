@@ -20,8 +20,11 @@ def load_model():
 
 def transcribe_chunk_whisper(chunk_path : str) -> str:
     model = load_model()
-
-    result = model.transcribe(chunk_path, task="transcribe")
+    result = model.transcribe(
+        chunk_path,
+        task="transcribe",
+        fp16=False
+    )
     return result["text"].strip()
 
 def transcribe_chunk_sarvam(chunk_path: str) -> str:
