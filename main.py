@@ -21,6 +21,20 @@ def run_pipeline(source : str, language : str = "english") -> dict:
 
     questions = extract_questions(transcript)
 
+    rag_chain = build_rag_chain(transcript)
+
+    return {
+        "title": title,
+        "transcript": transcript,
+        "summary": summary,
+        "action_item": action_item,
+        "key_decisions": decisions,
+        "open_questions": questions,
+        "rag_chain": rag_chain,
+    }
+
+
+
 
 
 
