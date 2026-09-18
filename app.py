@@ -360,34 +360,55 @@ h1, h2, h3, h4, h5, h6 {{
     max-width: 90%;
 }}
 
-.user-label  {{ color: var(--accent-glow); }}
-.bot-label   {{ color: var(--accent-2); }}
-
 .user-label {{
-    color: #7c3aed !important;
+    color: var(--accent-glow);
 }}
 
 .bot-label {{
-    color: #0891b2 !important;
+    color: var(--accent-2);
 }}
 
 .user-bubble {{
-    background: #ede9fe !important;
+    background: #ede9fe;
     color: #3b0764 !important;
     border: 1px solid #c4b5fd;
     align-self: flex-end;
 }}
 
 .bot-bubble {{
-    background: #ecfeff !important;
+    background: #ecfeff;
     color: #164e63 !important;
     border: 1px solid #a5f3fc;
     align-self: flex-start;
 }}
 
+/* Make sure all text inside the bubbles follows the bubble color */
 .user-bubble *,
 .bot-bubble * {{
     color: inherit !important;
+}}
+
+/* ── Divider ── */
+hr {{
+    border: none !important;
+    border-top: 1px solid var(--border) !important;
+    margin: 1.5rem 0 !important;
+}}
+
+/* ── Transcript box ── */
+.transcript-box {{
+    background: var(--surface-2) !important;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
 }}
 
 /* ── Stale Streamlit elements ── */
