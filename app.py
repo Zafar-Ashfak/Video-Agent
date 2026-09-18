@@ -363,29 +363,31 @@ h1, h2, h3, h4, h5, h6 {{
 .user-label  {{ color: var(--accent-glow); }}
 .bot-label   {{ color: var(--accent-2); }}
 
-.user-bubble {{ background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.25); align-self: flex-end; }}
-.bot-bubble  {{ background: rgba(6,182,212,0.1);  border: 1px solid rgba(6,182,212,0.2);   align-self: flex-start; }}
-
-/* ── Divider ── */
-hr {{
-    border: none !important;
-    border-top: 1px solid var(--border) !important;
-    margin: 1.5rem 0 !important;
+.user-label {{
+    color: #7c3aed !important;
 }}
 
-/* ── Transcript box ── */
-.transcript-box {{
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    font-size: 0.82rem;
-    line-height: 1.8;
-    max-height: 300px;
-    overflow-y: auto;
-    color: var(--text-muted);
-    white-space: pre-wrap;
-    word-break: break-word;
+.bot-label {{
+    color: #0891b2 !important;
+}}
+
+.user-bubble {{
+    background: #ede9fe !important;
+    color: #3b0764 !important;
+    border: 1px solid #c4b5fd;
+    align-self: flex-end;
+}}
+
+.bot-bubble {{
+    background: #ecfeff !important;
+    color: #164e63 !important;
+    border: 1px solid #a5f3fc;
+    align-self: flex-start;
+}}
+
+.user-bubble *,
+.bot-bubble * {{
+    color: inherit !important;
 }}
 
 /* ── Stale Streamlit elements ── */
@@ -653,7 +655,7 @@ else:
         </div>
         <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
             <span class="badge badge-purple">Transcription</span>
-            <span class="badge badge-cyan">Summarisation</span>
+            <span class="badge badge-cyan">Summarization</span>
             <span class="badge badge-green">RAG Chat</span>
         </div>
     </div>""", unsafe_allow_html=True)
