@@ -91,12 +91,6 @@ The generated transcript is processed by <strong>Llama 3.2</strong> through Lang
 
 <br />
 
-<h2>Project Screenshot</h2>
-
-<img src="./src/assets/Video_Agent.png" width="100%" />
-
-<br />
-
 <h2>Tech Stack</h2>
 
 <strong>Language:</strong> Python
