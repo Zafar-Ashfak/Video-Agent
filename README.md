@@ -30,24 +30,24 @@ AI Video Assistant is an AI-powered meeting intelligence tool designed to transf
 <h2>Workflow</h2>
 
                                     ┌──────────────────────┐
-                                    │  YouTube / Local     │
-                                    │  Audio / Video       │
+                                    │  YouTube / Meeting   │
+                                    │        Video         │
                                     └──────────┬───────────┘
                                                │
                                                ▼
                                     ┌──────────────────────┐
                                     │   Audio Processing   │
-                                    │ yt-dlp + Pydub       │
-                                    │ 16kHz Mono + Chunks  │
+                                    │    yt-dlp + Pydub    │
+                                    │  16kHz Mono + Chunks │
                                     └──────────┬───────────┘
                                                │
                                     ┌──────────┴──────────┐
                                     ▼                     ▼
                              ┌──────────────┐      ┌──────────────┐
                              │    English   │      │   Hinglish   │
-                             │   Whisper    │      │  Sarvam AI   │
+                             │    Whisper   │      │   Sarvam AI  │
                              └──────┬───────┘      └──────┬───────┘
-                                    └──────────┬───────────┘
+                                    └──────────┬──────────┘
                                                ▼
                                     ┌──────────────────────┐
                                     │  Meeting Transcript  │
@@ -68,13 +68,13 @@ AI Video Assistant is an AI-powered meeting intelligence tool designed to transf
                                                ▼
                                     ┌──────────────────────┐
                                     │      RAG Pipeline    │
-                                    │ Vector Store +       │
-                                    │ Retriever + LLM      │
+                                    │      Vector Store +  │
+                                    │      Retriever + LLM │
                                     └──────────┬───────────┘
                                                │
                                                ▼
                                     ┌──────────────────────┐
-                                    │    Chat with Meeting │
+                                    │  Chat with Meeting   │
                                     └──────────────────────┘
 
 <br />
