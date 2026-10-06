@@ -1,16 +1,14 @@
-<h1>AI Video Assistant – Meeting Intelligence</h1>
+<h1>Summify AI – AI-powered video and meeting summarizer</h1>
 <br />
 
-<p>
-AI Video Assistant is an AI-powered meeting intelligence tool designed to transform meeting recordings into useful and actionable information. It supports <strong>YouTube videos</strong> and <strong>local audio/video files</strong>, converts speech into text, generates professional summaries, extracts <strong>action items</strong>, <strong>key decisions</strong>, and <strong>open questions</strong>. It also includes a <strong>RAG-powered chat</strong> that allows users to ask questions directly from the meeting transcript. The application supports both <strong>English and Hinglish</strong> conversations with a clean Streamlit interface and dark/light mode.
-</p>
+<p> <strong>Summify AI</strong> is an AI-powered video and meeting summarization application that takes a <strong>YouTube or meeting video link</strong> as input and transforms the video into structured and actionable information. The application extracts the audio, converts speech into text using <strong>Whisper</strong> or <strong>Sarvam AI</strong>, and uses <strong>Llama 3.2</strong> with LangChain to generate a concise summary, meeting title, action items, key decisions, and open questions. It also provides a <strong>RAG-powered chat</strong> that allows users to ask questions directly about the video content and receive answers based on the generated transcript. The application supports both <strong>English and Hinglish</strong> conversations through a clean and interactive Streamlit interface. </p>
 
 <br />
 
 <h2>Features</h2>
 
 <ul>
-<li>YouTube video and local audio/video support</li>
+<li>YouTube video and Meeting video support</li>
 <li>Speech-to-text transcription using Whisper</li>
 <li>Hinglish transcription and translation using Sarvam AI</li>
 <li>Automatic meeting title generation</li>
