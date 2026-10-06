@@ -111,6 +111,6 @@ The generated transcript is processed by <strong>Llama 3.2</strong> through Lang
 <br/>
 <strong>Environment Management:</strong> python-dotenv
 <br/>
-<strong>Tools & Platforms:</strong> Git, GitHub, VS Code
+<strong>Tools & Platforms:</strong> Git, GitHub, PyCharm
 
 <br />
