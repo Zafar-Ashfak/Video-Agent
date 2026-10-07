@@ -1,7 +1,7 @@
-<h1>Summify AI – AI-powered video and meeting summarizer</h1>
+<h1>Summify AI – Meeting and Video summarizer</h1>
 <br />
 
-<p> <strong>Summify AI</strong> is an AI-powered video and meeting summarization application that takes a <strong>YouTube or meeting video link</strong> as input and transforms the video into structured and actionable information. The application extracts the audio, converts speech into text using <strong>Whisper</strong> or <strong>Sarvam AI</strong>, and uses <strong>Llama 3.2</strong> with LangChain to generate a concise summary, meeting title, action items, key decisions, and open questions. It also provides a <strong>RAG-powered chat</strong> that allows users to ask questions directly about the video content and receive answers based on the generated transcript. The application supports both <strong>English and Hinglish</strong> conversations through a clean and interactive Streamlit interface. </p>
+<p> <strong>Summify AI</strong> is an AI-powered meeting and video summarization application that takes a <strong>YouTube or meeting video link</strong> as input and transforms the video into structured and actionable information. The application extracts the audio, converts speech into text using <strong>Whisper</strong> or <strong>Sarvam AI</strong>, and uses <strong>Llama 3.2</strong> with LangChain to generate a concise summary, meeting title, action items, key decisions, and open questions. It also provides a <strong>RAG-powered chat</strong> that allows users to ask questions directly about the video content and receive answers based on the generated transcript. The application supports both <strong>English and Hinglish</strong> conversations through a clean and interactive Streamlit interface. </p>
 
 <br />
 
